@@ -47,7 +47,7 @@ $ npm run seed
 
 # API /api/
 
-- **POST** '/autenticacion'
+- **POST** '/login'
 
 ```json
 req.body:
