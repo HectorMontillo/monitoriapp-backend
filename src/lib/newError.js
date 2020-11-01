@@ -12,17 +12,27 @@ function notStore() {
   return newError;
 }
 
-function notData() {
+function notData(fields = [""]) {
   let newError = new Error();
   newError.status = 400;
-  newError.message = "Datos incompletos";
+  newError.message =
+    "Datos incompletos" +
+    (field.length ? `: Los campos ${fields.join(" ")} son requeridos` : "");
   return newError;
 }
 
-function badFormat() {
+function badFormat(field = "") {
   let newError = new Error();
   newError.status = 400;
-  newError.message = "Formato incorrecto";
+  newError.message = "Formato incorrecto" + (field ? `: ${field}` : "");
+  return newError;
+}
+
+function badPassword() {
+  let newError = new Error();
+  newError.status = 400;
+  newError.message =
+    "Contraseña insegura: Debe contener como mínimo 8 caracteres";
   return newError;
 }
 
@@ -80,6 +90,7 @@ module.exports = {
   notData,
   notStore,
   badFormat,
+  badPassword,
   badCredentials,
   unauthorized,
   disable,

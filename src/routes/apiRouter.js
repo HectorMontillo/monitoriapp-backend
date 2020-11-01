@@ -26,4 +26,9 @@ router.post(
   authController.login
 );
 
+/**
+ * API
+ */
+router.post("/signup", apiController.signup);
+
 module.exports = router;
