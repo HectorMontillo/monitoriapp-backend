@@ -7,15 +7,20 @@ function login(req, res, next) {
     }
     const token = jwt.sign({ userId: req.user.id }, process.env.JWTSECRET);
 
-    if (!req.user.DependenciaId) {
-      return res.status(200).json({ token, rol: req.user.RoleId });
-    }
-
-    return res.status(200).json({
+    const response = {
       token,
       rol: req.user.RoleId,
-      nombre: req.user.Dependencia.nombre,
-    });
+    };
+
+    if (req.user.DependenciaId) {
+      response.nombre_dependencia = req.user.Dependencia.nombre;
+    }
+
+    if (!req.user.PersonaId) {
+      response.profile = true;
+    }
+
+    return res.status(200).json(response);
   });
 }
 

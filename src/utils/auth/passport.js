@@ -20,7 +20,13 @@ passport.use(
     async function (email, password, cb) {
       try {
         const user = await models.Users.findOne({
-          attributes: ["id", "password", "DependenciaId", "RoleId"],
+          attributes: [
+            "id",
+            "password",
+            "DependenciaId",
+            "RoleId",
+            "PersonaId",
+          ],
           where: {
             email,
           },

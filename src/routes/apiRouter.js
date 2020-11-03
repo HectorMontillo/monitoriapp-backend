@@ -30,5 +30,13 @@ router.post(
  * API
  */
 router.post("/signup", apiController.signup);
+router.get("/get_dependencias", apiController.getDependencias);
+router.get("/get_programas_academicos", apiController.getProgramasAcademicos);
+
+router.post(
+  "/guardar_perfil",
+  passport.authenticate("jwt", { session: false }),
+  apiController.guardarPerfil
+);
 
 module.exports = router;

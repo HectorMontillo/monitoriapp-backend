@@ -64,3 +64,46 @@ res:
   "rol": 1
 }
 ```
+
+- **GET** '/get_dependencias'
+
+```json
+res:
+[
+    {
+        "nombre": "Vicerectoría de Bienestar Universitario",
+        "id": "11b73290-1e14-11eb-beeb-77a8419cc0cb"
+    }
+
+]
+```
+
+- **GET** '/get_programas_academicos'
+
+```json
+res:
+[
+    {
+        "nombre": "Ingeniería de Sistemas y Computación",
+        "id": "bff46887-fae0-4dc6-911b-64045a0fde45"
+    }
+]
+```
+
+- **POST** '/guardar_perfil'
+
+```json
+req.body:
+{
+    "programaId": "bff46887-fae0-4dc6-911b-64045a0fde45",
+    "nombres": "Persona de prueba"
+}
+```
+
+```json
+res:
+{
+    "programaId": "bff46887-fae0-4dc6-911b-64045a0fde45",
+    "nombres": "Persona de prueba"
+}
+```

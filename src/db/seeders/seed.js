@@ -4,11 +4,17 @@ const roles = require("./rolesIniciales");
 const users = require("./usuariosIniciales");
 const personas = require("./personasIniciales");
 const programas = require("./programasIniciales");
+const dependencias = require("./dependenciasIniciales");
 
 (async () => {
   try {
     console.log("Roles Iniciales...");
     await models.Roles.bulkCreate(roles, {
+      updateOnDuplicate: ["nombre"],
+    });
+
+    console.log("Dependencias Iniciales...");
+    await models.Dependencias.bulkCreate(dependencias, {
       updateOnDuplicate: ["nombre"],
     });
 

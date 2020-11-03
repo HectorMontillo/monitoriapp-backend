@@ -1,7 +1,14 @@
 const bcrypt = require("bcrypt");
 const models = require("../../db/models");
 const validator = require("validator");
-const { notData, badPassword, badFormat } = require("../../lib/newError");
+const jwt = require("jsonwebtoken");
+
+const {
+  notData,
+  badPassword,
+  badFormat,
+  newError,
+} = require("../../lib/newError");
 
 async function signup(req, res, next) {
   const { email, password } = req.body;
@@ -19,14 +26,24 @@ async function signup(req, res, next) {
 
   //Create person and user
   try {
+    const checkUser = await models.Users.findOne({
+      where: {
+        email,
+      },
+    });
+
+    if (checkUser) {
+      return next(newError("El usuario ya se encuentra resgistrado!"));
+    }
+
     const hash = await bcrypt.hash(password, parseInt(process.env.SALT_ROUNDS));
     const newUser = await models.Users.create({
       email,
       password: hash,
       RoleId: 4,
     });
-
-    return res.status(201).json({ newUser });
+    const token = jwt.sign({ userId: newUser.id }, process.env.JWTSECRET);
+    return res.status(201).json({ token });
   } catch (err) {
     return next(err);
   }
