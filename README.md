@@ -65,6 +65,23 @@ res:
 }
 ```
 
+- **POST** '/signup'
+
+```json
+req.body:
+{
+  "email":"hector.montillo@utp.edu.co",
+  "password":"123"
+}
+```
+
+```json
+res:
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NTViOTQxMC0xOGJlLTExZWItODNlNy0zZmM1NTEzNjg3MmQiLCJpYXQiOjE2MDM4NTA1ODF9.GKuZzMf81Y58oltg94FV24OYsjco-IfqsEvLT4i65jg",
+}
+```
+
 - **GET** '/get_dependencias'
 
 ```json
