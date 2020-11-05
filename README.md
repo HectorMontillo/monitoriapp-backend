@@ -61,7 +61,8 @@ req.body:
 res:
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NTViOTQxMC0xOGJlLTExZWItODNlNy0zZmM1NTEzNjg3MmQiLCJpYXQiOjE2MDM4NTA1ODF9.GKuZzMf81Y58oltg94FV24OYsjco-IfqsEvLT4i65jg",
-  "rol": 1
+  "rol": 1,
+  "profile":true //Si el usuario no terminó el registro
 }
 ```
 
