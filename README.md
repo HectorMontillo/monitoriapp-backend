@@ -110,6 +110,8 @@ res:
 
 - **POST** '/guardar_perfil'
 
+**Requiere Bearer Token**
+
 ```json
 req.body:
 {
