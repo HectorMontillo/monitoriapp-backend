@@ -61,7 +61,25 @@ req.body:
 res:
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NTViOTQxMC0xOGJlLTExZWItODNlNy0zZmM1NTEzNjg3MmQiLCJpYXQiOjE2MDM4NTA1ODF9.GKuZzMf81Y58oltg94FV24OYsjco-IfqsEvLT4i65jg",
-  "rol": 1
+  "rol": 1,
+  "profile":true //Si el usuario no terminó el registro
+}
+```
+
+- **POST** '/signup'
+
+```json
+req.body:
+{
+  "email":"hector.montillo@utp.edu.co",
+  "password":"123"
+}
+```
+
+```json
+res:
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NTViOTQxMC0xOGJlLTExZWItODNlNy0zZmM1NTEzNjg3MmQiLCJpYXQiOjE2MDM4NTA1ODF9.GKuZzMf81Y58oltg94FV24OYsjco-IfqsEvLT4i65jg",
 }
 ```
 
@@ -91,6 +109,8 @@ res:
 ```
 
 - **POST** '/guardar_perfil'
+
+**Requiere Bearer Token**
 
 ```json
 req.body:
