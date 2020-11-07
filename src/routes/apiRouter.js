@@ -39,4 +39,10 @@ router.post(
   apiController.guardarPerfil
 );
 
+router.post(
+  "/actualizar_foto_perfil",
+  passport.authenticate("jwt", { session: false }),
+  apiController.actualizarFotoPerfil
+);
+
 module.exports = router;
