@@ -45,6 +45,14 @@ Correr los seeaders
 $ npm run seed
 ```
 
+# PUBLIC FILES
+
+Servicio de archivos estáticos:
+
+## Fotos de perfil.
+
+- **GET** '/uploads/profiles/**idFile** '
+
 # API /api/
 
 - **POST** '/login'
@@ -80,6 +88,7 @@ req.body:
 res:
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NTViOTQxMC0xOGJlLTExZWItODNlNy0zZmM1NTEzNjg3MmQiLCJpYXQiOjE2MDM4NTA1ODF9.GKuZzMf81Y58oltg94FV24OYsjco-IfqsEvLT4i65jg",
+  "gravatar": "https://s.gravatar.com/avatar/a07149755710829367c170e4f7d8c427?s=100&r=g&d=retro"
 }
 ```
 
@@ -125,5 +134,48 @@ res:
 {
     "programaId": "bff46887-fae0-4dc6-911b-64045a0fde45",
     "nombres": "Persona de prueba"
+}
+```
+
+- **POST** '/actualizar_foto_perfil'
+
+**Requiere Bearer Token**
+
+```
+req.form-data: (multipart)
+
+    profile: archivo.jpg, jpeg o png
+
+```
+
+```json
+res:
+{
+    "status": 200,
+    "message": "Foto de perfil actualizada correctamente!",
+    "data": {
+        "name": "frame.png",
+        "mimetype": "image/png",
+        "size": 5302,
+        "savedName": "b5bbbd30-2142-11eb-9d57-73517340dd65.png"
+    }
+}
+```
+
+- **GET** '/get_user'
+
+**Requiere Bearer Token**
+
+```json
+res:
+{
+    "id": "b5bbbd30-2142-11eb-9d57-73517340dd65",
+    "email": "hector.montillo@utp.edu.co",
+    "profilePicture": "b5bbbd30-2142-11eb-9d57-73517340dd65.png",
+    "gravatar": null,
+    "nombres": "Hector Steven Montillo",
+    "programa": "Ingeniería de Sistemas y Computación",
+    "rol": "SuperAdmin",
+    "rolId": 1
 }
 ```

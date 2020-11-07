@@ -3,6 +3,7 @@ const getDependencias = require("./getDependencias");
 const getProgramasAcademicos = require("./getProgramasAcademicos");
 const guardarPerfil = require("./guardarPerfil");
 const actualizarFotoPerfil = require("./actualizarFotoPerfil");
+const getUser = require("./getUser");
 
 module.exports = {
   signup,
@@ -10,4 +11,5 @@ module.exports = {
   getProgramasAcademicos,
   guardarPerfil,
   actualizarFotoPerfil,
+  getUser,
 };
