@@ -180,7 +180,7 @@ res:
 }
 ```
 
-- **POST** '/actualizar_perfil'
+- **PUT** '/actualizar_perfil'
 
 **Requiere Bearer Token**
 
@@ -200,7 +200,7 @@ res:
 }
 ```
 
-- **POST** '/actualizar_contrasena'
+- **PUT** '/actualizar_contrasena'
 
 **Requiere Bearer Token**
 
