@@ -13,7 +13,7 @@ async function getUser(req, res, next) {
           attributes: ["nombres"],
           include: {
             model: models.Programas,
-            attributes: ["nombre"],
+            attributes: ["nombre", "id"],
           },
         },
         {
@@ -29,6 +29,7 @@ async function getUser(req, res, next) {
       gravatar: data.gravatar,
       nombres: data.Persona.nombres,
       programa: data.Persona.Programa.nombre,
+      programaId: data.Persona.Programa.id,
       rol: data.Role.nombre,
       rolId: data.RoleId,
     };
