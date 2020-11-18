@@ -4,6 +4,8 @@ const getProgramasAcademicos = require("./getProgramasAcademicos");
 const guardarPerfil = require("./guardarPerfil");
 const actualizarFotoPerfil = require("./actualizarFotoPerfil");
 const getUser = require("./getUser");
+const actualizarPerfil = require("./actualizarPerfil");
+const actualizarContrasena = require("./actualizarContrasena");
 
 module.exports = {
   signup,
@@ -12,4 +14,6 @@ module.exports = {
   guardarPerfil,
   actualizarFotoPerfil,
   getUser,
+  actualizarPerfil,
+  actualizarContrasena,
 };

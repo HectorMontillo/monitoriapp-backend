@@ -39,6 +39,18 @@ router.post(
   apiController.guardarPerfil
 );
 
+router.put(
+  "/actualizar_perfil",
+  passport.authenticate("jwt", { session: false }),
+  apiController.actualizarPerfil
+);
+
+router.put(
+  "/actualizar_contrasena",
+  passport.authenticate("jwt", { session: false }),
+  apiController.actualizarContrasena
+);
+
 router.post(
   "/actualizar_foto_perfil",
   passport.authenticate("jwt", { session: false }),

@@ -179,3 +179,43 @@ res:
     "rolId": 1
 }
 ```
+
+- **POST** '/actualizar_perfil'
+
+**Requiere Bearer Token**
+
+```json
+req.body:
+{
+    "programaId": "bff46887-fae0-4dc6-911b-64045a0fde45",
+    "nombres": "Persona amada 2"
+}
+```
+
+```json
+res:
+{
+    "status": 200,
+    "mensaje": "Perfil actualizado correctamente"
+}
+```
+
+- **POST** '/actualizar_contrasena'
+
+**Requiere Bearer Token**
+
+```json
+req.body:
+{
+    "password": "123",
+    "currentPassword": "1234"
+}
+```
+
+```json
+res:
+{
+    "status": 200,
+    "mensaje": "Contraseña actualizada correctamente"
+}
+```

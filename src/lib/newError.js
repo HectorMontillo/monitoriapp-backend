@@ -17,7 +17,7 @@ function notData(fields = [""]) {
   newError.status = 400;
   newError.message =
     "Datos incompletos" +
-    (field.length ? `: Los campos ${fields.join(" ")} son requeridos` : "");
+    (fields.length ? `: Los campos ${fields.join(" ")} son requeridos` : "");
   return newError;
 }
 
